@@ -41,3 +41,11 @@ These are step by step to run this project in local:
 ## Prerequisite:
 
 1. npm - 10.9.2 or higher
+
+## Routes:
+1. /dashboard - Portal
+2. /destination - Destinations
+3. /category - Categories
+4. /content - Content Management
+5. /login - Login
+6. /register - Register
