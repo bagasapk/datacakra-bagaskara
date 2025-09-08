@@ -11,7 +11,7 @@ import type { RequestPostCreateArticle } from "../../types/Destinations.type";
 import useGetCategories from "../Categories/queries/useGetCategories";
 import useDeleteCategory from "../CategoryDetail/queries/useDeleteCategory";
 import useGetArticles from "../Destinations/queries/useGetArticles";
-import useDeleteArticleById from "../DestionationDetail/queries/useDeleteArticleById";
+import useDeleteArticleById from "../DestinationDetail/queries/useDeleteArticleById";
 
 const ContentManagement = () => {
   const { user } = useStore();

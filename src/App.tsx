@@ -1,6 +1,9 @@
+import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router";
 import AuthLayout from "./components/AuthLayout";
 import Layout from "./components/Layout";
+import Loading from "./components/Loading";
+import PrivateRoute from "./components/PrivateRoute";
 import {
   URL_CATEGORY,
   URL_CATEGORY_DETAIl,
@@ -11,43 +14,45 @@ import {
   URL_LOGIN,
   URL_REGISTER,
 } from "./constants/config";
-import Categories from "./pages/Categories";
-import CategoryDetail from "./pages/CategoryDetail";
-import Destinations from "./pages/Destinations";
-import DestinationDetail from "./pages/DestionationDetail";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import PrivateRoute from "./components/PrivateRoute";
-import Dashboard from "./pages/Dashboard";
-import ContentManagement from "./pages/ContentManagement";
+
+const Categories = lazy(() => import("./pages/Categories"));
+const CategoryDetail = lazy(() => import("./pages/CategoryDetail"));
+const ContentManagement = lazy(() => import("./pages/ContentManagement"));
+const Dashboard = lazy(() => import("./pages/Dashboard"));
+const Destinations = lazy(() => import("./pages/Destinations"));
+const DestinationDetail = lazy(() => import("./pages/DestinationDetail"));
+const Login = lazy(() => import("./pages/Login"));
+const Register = lazy(() => import("./pages/Register"));
 
 function App() {
   return (
-    <Routes>
-      <Route element={<AuthLayout />}>
-        <Route path={URL_REGISTER} element={<Register />}></Route>
-        <Route path={URL_LOGIN} element={<Login />}></Route>
-      </Route>
-      <Route element={<PrivateRoute />}>
-        <Route element={<Layout />}>
-          <Route path={URL_DASHBOARD} element={<Dashboard />}></Route>
-          <Route path={URL_CATEGORY} element={<Categories />}></Route>
-          <Route
-            path={URL_CATEGORY_DETAIl}
-            element={<CategoryDetail />}
-          ></Route>
-          <Route path={URL_DESTINATION} element={<Destinations />}></Route>
-          <Route
-            path={URL_DESTINATION_DETAIL}
-            element={<DestinationDetail />}
-          ></Route>
-          <Route
-            path={URL_CONTENT_MANAGEMENT}
-            element={<ContentManagement />}
-          ></Route>
+    <Suspense fallback={<Loading fullscreen />}>
+      <Routes>
+        <Route element={<AuthLayout />}>
+          <Route path={URL_REGISTER} element={<Register />}></Route>
+          <Route path={URL_LOGIN} element={<Login />}></Route>
         </Route>
-      </Route>
-    </Routes>
+        <Route element={<PrivateRoute />}>
+          <Route element={<Layout />}>
+            <Route path={URL_DASHBOARD} element={<Dashboard />}></Route>
+            <Route path={URL_CATEGORY} element={<Categories />}></Route>
+            <Route
+              path={URL_CATEGORY_DETAIl}
+              element={<CategoryDetail />}
+            ></Route>
+            <Route path={URL_DESTINATION} element={<Destinations />}></Route>
+            <Route
+              path={URL_DESTINATION_DETAIL}
+              element={<DestinationDetail />}
+            ></Route>
+            <Route
+              path={URL_CONTENT_MANAGEMENT}
+              element={<ContentManagement />}
+            ></Route>
+          </Route>
+        </Route>
+      </Routes>
+    </Suspense>
   );
 }
 

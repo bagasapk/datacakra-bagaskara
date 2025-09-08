@@ -17,22 +17,12 @@
 
 .auth-layout {
   background: linear-gradient(
-      to bottom right,
-      var(--color-primary) 0%,
-      var(--color-dark) 100%
-    ),
-    url("/src/assets/imgDoodle.png");
+    to bottom right,
+    var(--color-primary) 0%,
+    var(--color-dark) 100%
+  );
 }
 
 .bg-img-hero {
   background: url(/src/assets/imgHero.png);
-}
-
-.bg-img-doodle {
-  background: url(/src/assets/imgDoodle.png), 
-    linear-gradient(
-      to bottom,
-      var(--color-primary) 0%,
-      var(--color-secondary) 100%
-    );
 }
