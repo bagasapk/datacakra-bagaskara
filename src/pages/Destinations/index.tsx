@@ -26,7 +26,7 @@ const Destinations = () => {
 
   return (
     <div className="relative">
-      <section className="px-4 sm:px-20 py-10">
+      <section className="px-4 sm:px-20 py-10 bg-gradient-to-b from-primary to-dark">
         <Heading>Destinations</Heading>
         <Filter onChange={debounce(handleFilter, 700)} />
         <LoadingLayout isEmpty={!data?.data.length} isLoading={isLoading}>
@@ -48,7 +48,11 @@ const Destinations = () => {
             total={data?.meta.pagination.total}
           />
         </LoadingLayout>
-        <CreateButton onClick={() => setOpen(true)} label="Create Article" />
+        <CreateButton
+          className="bg-white/70! hover:bg-white! text-dark"
+          onClick={() => setOpen(true)}
+          label="Create Article"
+        />
         <CreateModal
           open={open}
           onCancel={() => setOpen(false)}

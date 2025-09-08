@@ -15,9 +15,9 @@ const TravelCard = ({
   const navigate = useNavigate();
   return (
     <Card
+    variant="borderless"
       className="shadow-md hover:scale-105 transition-all"
       title={
-        <div>
           <Image
             rootClassName="block!"
             height={200}
@@ -25,7 +25,6 @@ const TravelCard = ({
             alt={title}
             src={imageUrl}
           ></Image>
-        </div>
       }
       styles={{
         header: { padding: 0, position: "unset" },
