@@ -1,0 +1,38 @@
+.create__button {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  transition: all .5s ease-in-out;
+  overflow: hidden;
+}
+.create__button .anticon {
+  display: block;
+}
+.create__button::before {
+  content: attr(aria-data);
+  font-size: medium;
+  transform: translateX(-200%);
+  position: absolute;
+  right: 1.25rem;
+
+  transition: all .5s ease-in-out;
+}
+
+@keyframes spin {
+  0% {
+    rotate: 0;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+.create__button:hover .anticon {
+  animation: spin .5s ease-in-out;
+}
+.create__button:hover::before {
+  transform: translateX(0);
+}
+.create__button:hover {
+  padding: 1rem 9rem 1rem 1rem;
+}

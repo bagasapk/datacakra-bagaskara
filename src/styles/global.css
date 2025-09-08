@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --font-amarante: Playfair Display, "sans-serif";
+
+  --color-primary: #f9f7f7;
+  --color-secondary: #dbe2ef;
+  --color-blue: #3f72af;
+  --color-dark: #112d4e;
+
+  --shadow-filter: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+:root {
+  font-family: "Open Sans", sans-serif;
+}
+
+.auth-layout {
+  background: linear-gradient(
+      to bottom right,
+      var(--color-primary) 0%,
+      var(--color-dark) 100%
+    ),
+    url("/src/assets/imgDoodle.png");
+}
+
+.bg-img-hero {
+  background: url(/src/assets/imgHero.png);
+}
+
+.bg-img-doodle {
+  background: url(/src/assets/imgDoodle.png), 
+    linear-gradient(
+      to bottom,
+      var(--color-primary) 0%,
+      var(--color-secondary) 100%
+    );
+}
