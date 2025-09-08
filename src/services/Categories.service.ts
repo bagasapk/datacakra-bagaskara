@@ -1,15 +1,10 @@
 import {
   API_CATEGORY,
-  API_CATEGORY_BY_ID,
-  API_COMMENT_BY_ID,
+  API_CATEGORY_BY_ID
 } from "../constants/config";
 import type { BaseResponse } from "../constants/interface";
 import { apiTravel } from "../lib/api.lib";
 import type { GetCategories, RequestCategory } from "../types/Categories.type";
-import type {
-  RequestPostComment,
-  ResponsePostComment,
-} from "../types/Comments.type";
 
 export const getCategories = async (params?: any) => {
   try {

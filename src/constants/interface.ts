@@ -1,6 +1,3 @@
-import type { MessageInstance } from "antd/es/message/interface";
-import type { ReactElement } from "react";
-
 export interface BaseResponse<T> {
   data: T;
   meta: BaseResponseMeta;

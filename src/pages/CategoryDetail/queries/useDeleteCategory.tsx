@@ -1,7 +1,6 @@
 import {
-  QueryClient,
   useMutation,
-  useQueryClient,
+  useQueryClient
 } from "@tanstack/react-query";
 import { message } from "antd";
 import { API_CATEGORY, API_CATEGORY_BY_ID } from "../../../constants/config";
